@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      REFERENCE_REPO: intensive-front/l2ref
+      REFERENCE_REPO: intensive-front/l3ref
       # STRICT=true  -> максимально строго (кроме CRLF и BOM)
       # STRICT=false -> игнорировать пробелы в конце строк + пустые строки в конце файла
       STRICT: "false"
@@ -38,25 +38,47 @@ jobs:
           # =====================================================
           FILES_REQUIRED=(
             "index.html"
+            "track.html"
+            "order.html"
+            "images/icons/regular.svg"
+            "images/icons/fast.svg"
+            "images/icons/created.svg"
+            "images/icons/in-way.svg"
+            "images/icons/ready.svg"
+            "images/icons/done.svg"
+            "images/track-bg.png"
+            "images/order-bg.png"
+            "images/main-image.png"
+            "images/sizes/xs.png"
+            "images/sizes/s.png"
+            "images/sizes/m.png"
+            "images/sizes/l.png"
+            "images/sizes/xl.png"
+            "images/sizes/max.png"
             "styles/base.css"
             "styles/base_adaptive.css"
             "styles/index.css"
             "styles/index_adaptive.css"
+            "styles/order.css"
+            "styles/order_adaptive.css"
+            "styles/track.css"
+            "styles/track_adaptive.css"
             "fonts/Roboto-Bold.ttf"
             "fonts/Roboto-Medium.ttf"
             "fonts/Roboto-Regular.ttf"
-            "images/main-image.png"
           )
 
           # =====================================================
           # СПИСОК 2 — файлы для сравнения содержимого (diff)
           # =====================================================
           FILES_COMPARE=(
-            "styles/base.css"
-            "styles/base_adaptive.css"
-            "styles/index.css"
-            "styles/index_adaptive.css"
+            "styles/order.css"
+            "styles/order_adaptive.css"
+            "styles/track.css"
+            "styles/track_adaptive.css"
             "index.html"
+            "track.html"
+            "order.html"
           )
 
           mkdir -p .norm/ref .norm/student .diffs report
